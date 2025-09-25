@@ -1,0 +1,47 @@
+| Container                 | Type       | Complexité (accès / insertion)                                | Particularité               | Cas d’usage                                   | Exo CPP09              |
+| ------------------------- | ---------- | ------------------------------------------------------------- | --------------------------- | --------------------------------------------- | ---------------------- |
+| **`std::vector`**         | Séquentiel | Accès index `O(1)` / Insert fin `O(1)` / Insert milieu `O(n)` | Tableau dynamique           | Stocker suite d’éléments, accès rapide        | **Ex02** (tri)         |
+| **`std::deque`**          | Séquentiel | Accès index `O(1)` / Insert début & fin `O(1)`                | Tableau double-entrée       | File ou pile flexible, comparatif avec vector | **Ex02** (tri)         |
+| **`std::list`**           | Séquentiel | Accès `O(n)` / Insert `O(1)` (où tu as l’itérateur)           | Liste chaînée               | Beaucoup d’insertions/suppressions au milieu  | -                      |
+| **`std::map`**            | Associatif | Recherche `O(log n)` / Insert `O(log n)`                      | Clés **triées**             | Associer clé→valeur avec ordre                | **Ex00** (date→valeur) |
+| **`std::multimap`**       | Associatif | Idem `map`                                                    | Clés en double autorisées   | Cas rares                                     | -                      |
+| **`std::set`**            | Associatif | Recherche `O(log n)` / Insert `O(log n)`                      | Ensemble trié, sans doublon | Vérifier existence                            | -                      |
+| **`std::unordered_map`**  | Hash       | Recherche `O(1)` en moyenne                                   | Clés **non triées**         | Associer clé→valeur rapidement sans ordre     | -                      |
+| **`std::unordered_set`**  | Hash       | Recherche `O(1)`                                              | Ensemble non trié           | Vérifier existence très vite                  | -                      |
+| **`std::stack`**          | Adaptateur | `push/pop/top` en `O(1)`                                      | Basé sur deque              | Pile LIFO                                     | **Ex01**               |
+| **`std::queue`**          | Adaptateur | `push/pop/front/back` en `O(1)`                               | Basé sur deque              | File FIFO                                     | -                      |
+| **`std::priority_queue`** | Adaptateur | `push/pop` en `O(log n)`                                      | Max-heap                    | Extraire l’élément max                        | -                      |
+
+
+🗂️ Fiche Mémo Containers STL
+Séquentiels
+
+std::vector → Tableau dynamique, accès index rapide, idéal pour stocker et parcourir.
+
+std::deque → Tableau double-entrée, insertions rapides au début et à la fin.
+
+std::list → Liste chaînée, insertions/suppressions rapides partout, mais accès lent.
+
+Associatifs (triés)
+
+std::map → Associe clés uniques triées à des valeurs (clé → valeur).
+
+std::multimap → Comme map, mais accepte des clés dupliquées.
+
+std::set → Ensemble trié de valeurs uniques.
+
+std::multiset → Comme set, mais accepte les doublons.
+
+Associatifs (non ordonnés → hash)
+
+std::unordered_map → Associe clés uniques à valeurs, accès ultra-rapide, pas d’ordre.
+
+std::unordered_set → Ensemble non trié de valeurs uniques, accès ultra-rapide.
+
+Adaptateurs
+
+std::stack → Pile LIFO (dernier entré, premier sorti).
+
+std::queue → File FIFO (premier entré, premier sorti).
+
+std::priority_queue → File à priorité (toujours l’élément max/min en tête).
