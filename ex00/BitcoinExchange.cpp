@@ -1,5 +1,6 @@
 #include "BitcoinExchange.hpp"
 
+//-------------------------------Constructors - Destructors--------------------------------
 BitcoinExchange::BitcoinExchange() {
     parseDatabase("data.csv");
 }
@@ -16,6 +17,25 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &other) {
 }
 
 BitcoinExchange::~BitcoinExchange() {}
+
+//-------------------------------------utils-------------------------------------------
+
+void BitcoinExchange::trim(std::string &s) {
+     // trim gauche
+    std::string::iterator it = s.begin();
+    while (it != s.end() && isspace(*it)) ++it;
+    s.erase(s.begin(), it);
+
+    // trim droite
+    if (!s.empty()) {
+        std::string::reverse_iterator rit = s.rbegin();
+        while (rit != s.rend() && isspace(*rit)) ++rit;
+        s.erase(rit.base(), s.end());
+    }
+}
+
+
+//-------------------------------Member functions--------------------------------
 
 void BitcoinExchange::parseDatabase(std::string const &filename) {
     std::ifstream file(filename);
@@ -71,6 +91,5 @@ bool BitcoinExchange::isValueValid(float value) {
 }
 
 float BitcoinExchange::getExchangeRate(std::string const &date) {
-    // Implement logic to get exchange rate for a specific date
     return 0.0f;
 }
