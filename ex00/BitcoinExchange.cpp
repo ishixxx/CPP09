@@ -34,7 +34,6 @@ void BitcoinExchange::trim(std::string &s) {
     }
 }
 
-
 //-------------------------------Member functions--------------------------------
 
 void BitcoinExchange::parseDatabase(std::string const &filename) {
@@ -50,7 +49,7 @@ void BitcoinExchange::parseDatabase(std::string const &filename) {
     file.close();
 }
 
-void BitcoinExchange::parseInput(std::string const &filename) {}
+void BitcoinExchange::processInput(std::string const &filename) {}
 
 void BitcoinExchange::parseLine(std::string line) {
     trim(line);

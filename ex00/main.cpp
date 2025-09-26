@@ -7,8 +7,9 @@ int main(int argc, char **argv) {
     }
 
     try {
-        BitcoinExchange btc(argv[1]);
-        btc.processInput();
+        BitcoinExchange btc;
+        btc.parseDatabase("data.csv");
+        btc.processInput(argv[1]);
     } 
     catch (const std::exception &e) {
         std::cerr << "Error initializing BitcoinExchange: " << e.what() << std::endl;
