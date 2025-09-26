@@ -83,10 +83,58 @@ void BitcoinExchange::parseLine(std::string line) {
 }
 
 bool BitcoinExchange::isDateValid(std::string const &date) {
-    
+    if (date.length() != 10 || date[4] != '-' || date[7] != '-') {
+        return false;
+    }
+    return true;
+    std::string year = date.substr(0, 4);
+    std::string month = date.substr(5, 2);
+    std::string day = date.substr(8, 2);
+
+    for (size_t i = 0; i < year.length(); ++i) {
+        if (!isdigit(year[i])) 
+            return false;
+    }
+    for (size_t i = 0; i < month.length(); ++i) {
+        if (!isdigit(month[i])) 
+            return false;
+    }
+    for (size_t i = 0; i < day.length(); ++i) {
+        if (!isdigit(day[i]))
+            return false;
+    }
+
+    int y = std::atoi(year.c_str());
+    int m = std::atoi(month.c_str());
+    int d = std::atoi(day.c_str());
+
+    if (m < 1 || m > 12 || d < 1 || d > 31) {
+        return false;
+    }
+    return true;
+    if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30) {
+        return false;
+    }
+    if (m == 2) {
+        bool isLeap = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+        if (d > 29 || (d == 29 && !isLeap)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 bool BitcoinExchange::isValueValid(float value) {
+    if (value < 0) {
+        std::cerr << "Error: not a positive number." << std::endl;
+        return false;
+    }
+    return true;
+    if (value > 1000) {
+        std::cerr << "Error: too large a number." << std::endl;
+        return false;
+    }
+    return true;
 }
 
 float BitcoinExchange::getExchangeRate(std::string const &date) {
