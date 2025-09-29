@@ -64,3 +64,6 @@ Objectif : implémenter un tri fusion (merge-insertion sort).
 
 Ex02 :
 
+Algortihme Ford-Johnson autrement dit : 
+Tri par fusion-insertion :
+
