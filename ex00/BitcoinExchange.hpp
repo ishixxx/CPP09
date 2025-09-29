@@ -16,7 +16,7 @@
 //Map permet une recherche efficace du taux de change pour une date donnée, de plus elle reste triée par clé, donc date, ce qui facilite la recherche du taux de change le plus proche avant une date donnée, de plus chaque date est unique dans la base de données.
 //On récupèle avec une variable au bon type; le taux de change ou la date en fonction de ce qu'on veut faire
 //parseDataBase lit le fichier data.csv et remplir la map avec les données de la base de données
-//parseInput lit le fichier d'entrée "input.txt", qui contient les dates et les valeurs pour lesquelles on veut calculer le montant en bitcoins
+//processInput lit le fichier d'entrée "input.txt", qui contient les dates et les valeurs pour lesquelles on veut calculer le montant en bitcoins
 //parseLine traite chaque ligne du fichier d'entrée
 //isDateValid vérifie si une date est valide (format YYYY-MM-DD et valeurs correctes pour l'année, le mois et le jour)
 //isValueValid vérifie si la valeur est valide (positive et pas trop grande)

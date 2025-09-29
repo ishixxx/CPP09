@@ -45,3 +45,22 @@ std::stack → Pile LIFO (dernier entré, premier sorti).
 std::queue → File FIFO (premier entré, premier sorti).
 
 std::priority_queue → File à priorité (toujours l’élément max/min en tête).
+
+Pour le premier exercice, on utilisera std::map.
+Ex00 – BitcoinExchange
+Objectif : associer une date à une valeur.
+👉 Container adapté : std::map<std::string, float> (dates triées).
+
+Pour le deuxième exercice, on utilisera std::stack
+Ex01 – RPN (Reverse Polish Notation)
+Objectif : calculer une expression polonaise inversée.
+👉 Container adapté : std::stack<int>.
+Car on dépile les opérandes dès qu’on rencontre un opérateur.
+
+Pour le troisième exercice, on utilisera std::vector et std::deque
+Ex02 – PmergeMe
+Objectif : implémenter un tri fusion (merge-insertion sort).
+👉 Containers adaptés : std::vector<int> et std::deque<int>.
+
+Ex02 :
+
