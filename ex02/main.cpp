@@ -22,9 +22,8 @@ int main(int argc, char **argv) {
     pmergeMe.sort();
     clock_t end = clock();
 
-    pmergeMe.sort();
-
     std::cout << std::endl;
+    //number * 10^-6 so if 5e-06 seconds = 5 * 10^6 = 0,000005
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
     std::cout << "Time taken to sort: " << std::fixed << std::setprecision(6) << elapsed << " seconds" << std::endl;
 

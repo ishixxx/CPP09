@@ -55,18 +55,19 @@ void PmergeMe::sort() {
         std::cout << numbersVector[i] << " ";
     }
     std::cout << std::endl;
-
     std::cout << "After: ";
     for (size_t i = 0; i < sortedVector.size(); ++i) {
         std::cout << sortedVector[i] << " ";
     }
+
     std::cout << std::endl;
     std::cout << std::endl;
-    std::cout << std::endl;
+
+
     std::cout << "Time to process a range of " <<  numbersVector.size() << " elements with std::vector : " 
-              << vectorSortTime << " seconds" << std::endl;
+              << std::fixed << std::setprecision(6) << vectorSortTime << " seconds" << std::endl;
     std::cout << "Time to process a range of " <<  numbersDeque.size() << " elements with std::deque : " 
-              << dequeSortTime << " seconds" << std::endl;
+              << std::fixed << std::setprecision(6) << dequeSortTime  << " seconds" << std::endl;
 }
 
 //------------------------------ Algorithm -----------------------------//
@@ -166,6 +167,6 @@ Container fordJohnsonSort(Container &input) {
     return A;
 }
 
-// Explicit instantiation for std::vector<int> and std::deque<int>
+// Explicit instantiation for std::vector<int> and std::deque<int>. So the template is compiled for these types.
 template std::vector<int> fordJohnsonSort(std::vector<int> &input);
 template std::deque<int> fordJohnsonSort(std::deque<int> &input);
