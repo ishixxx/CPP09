@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
 
     pmergeMe.sort();
 
+    std::cout << std::endl;
     double elapsed = double(end - start) / CLOCKS_PER_SEC;
     std::cout << "Time taken to sort: " << std::fixed << std::setprecision(6) << elapsed << " seconds" << std::endl;
 
