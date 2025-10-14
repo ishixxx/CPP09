@@ -118,8 +118,7 @@ Container fordJohnsonSort(Container &input) {
 
     // Step 1: Pair up elements and split into A (max) and B (min)
     Container A, B;
-    int i = 0;
-    for (; i + 1 < n; i += 2) {
+    for (int i = 0; i + 1 < n; i += 2) {
         if (input[i] > input[i + 1]) {
             A.push_back(input[i]);
             B.push_back(input[i + 1]);
